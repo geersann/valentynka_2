@@ -1,0 +1,21 @@
+{
+  "name": "valentinka",
+  "version": "1.0.0",
+  "description": "A charming interactive Valentine's Day quest game where players need to find three keys through different challenges to reveal a special Valentine's message.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomfordrumm/valentinka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tomfordrumm/valentinka/issues"
+  },
+  "homepage": "https://github.com/tomfordrumm/valentinka#readme"
+}
