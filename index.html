@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Quest</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./fireworks.css">
+</head>
+<body>
+    <div class="keys">
+        <span class="key" id="key1">🔑</span>
+        <span class="key" id="key2">🔑</span>
+        <span class="key" id="key3">🔑</span>
+    </div>
+
+    <div id="welcome-screen">
+        <h1>В мене для тебе є валентинка, але тобі треба постаратися)</h1>
+        <p>Щоб получити її, тобі потрібно знайти 3 ключика</p>
+        <button onclick="startQuest()">Погнали!</button>
+    </div>
+
+    <div id="stage1" class="hidden">
+        <h2>Етап 1: Знайди ключик</h2>
+        <div id="hearts-container"></div>
+        <p class="message hidden" id="stage1-message"></p>
+    </div>
+
+    <div id="stage2" class="hidden">
+        <h2>Етап 2: Розшифруй послання</h2>
+        <p id="encrypted-message"></p>
+        <input type="text" id="decrypted-input" placeholder="Введите расшифрованный текст">
+        <button onclick="checkDecryption()">Перевірити</button>
+        <p class="message hidden" id="stage2-message"></p>
+    </div>
+
+    <div id="stage3" class="hidden">
+        <h2>Етап 3: Зібрати код</h2>
+        <div id="quiz-container" class="quiz-container"></div>
+        <p class="message hidden" id="stage3-message"></p>
+    </div>
+
+    <div class="firework-container hidden" id="fireworks">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
+    <div id="final-screen" class="hidden fullscreen">
+        <div class="final-heart-container"><div onclick="finalHeart()" id="final-heart" class="final-heart pulsating">❤️</div><div style="text-align: center;">👆<br/>Ти пройшла всі випробування, Тикай на мене</div></div>
+        <div class="heart-message"></div>
+        <p class="hiden" id="valentintext"></p>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
