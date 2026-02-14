@@ -4,10 +4,10 @@ let currentStage = 1;
 let currentQuestion = 0;
 let correctAnswers = 0;
 
-const numberOfHearts = 25; // Поменя на свое значение. Количество сердец на первом шаге
-const secondStepWords = ["Міні Дід", "Гніздечко", "Річниця", "Весілля"]; // Массив слов для второго шага
+const numberOfHearts = 25;
+const secondStepWords = ["Міні Дід", "Гніздечко", "Річниця", "Весілля"];
 
-const quizQuestions = [ // Массив вопросов для третьего шага
+const quizQuestions = [
     {
         question: "Що найперше тобі подарував старий?",
         options: ["Іграшку", "Духи", "Подушку", "Шмотку"],
@@ -35,7 +35,7 @@ const quizQuestions = [ // Массив вопросов для третьего
     }
 ];
 
-const valentinText = "Ця Валентинка для тебе моя кічя!" // Текст для финального шага
+const valentinText = "Ця Валентинка для тебе моя кічя!"
 
 function startQuest() {
     document.getElementById('welcome-screen').classList.add('hidden');
@@ -216,13 +216,25 @@ function step2Submit(e) {
 function finalHeart() {
 
     const heart = document.getElementById('final-heart');
+    const video = document.getElementById('final-video');
+
+    // зупиняємо пульсацію і запускаємо збільшення
     heart.classList.remove('pulsating');
     heart.classList.add('growing');
 
-    const valentinTextElement = document.getElementById('valentintext');
+    // чекаємо поки серце збільшиться
     setTimeout(() => {
-        valentinTextElement.classList.remove('hidden');
-        valentinTextElement.innerHTML = valentinText;
-    }, 1000);
 
+        // показуємо відео
+        video.classList.remove('hidden');
+
+        // трохи чекаємо щоб спрацював fade
+        setTimeout(() => {
+            video.classList.add('show');
+        }, 50);
+
+        video.currentTime = 0;
+        video.play();
+
+    }, 1500); // 1.5 сек
 }

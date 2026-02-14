@@ -12,7 +12,13 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-.hidden { display: none !important; }
+
+.hidden { 
+    display: none !important; 
+}
+
+/* ================= HEARTS ================= */
+
 #hearts-container {
     position: relative;
     width: 60vw;
@@ -28,19 +34,27 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
 }
+
 .pulsating {
     font-size: 5em;
     animation: pulse 1s infinite;
 }
+
+/* ================= KEYS ================= */
+
 .key {
     font-size: 2em;
     margin: 0 5px;
     filter: grayscale(100%);
     transition: filter 1s ease-in-out;
 }
+
 .key.found {
     filter: grayscale(0);
 }
+
+/* ================= FULLSCREEN FINAL ================= */
+
 .fullscreen {
     position: fixed;
     top: 0;
@@ -72,45 +86,50 @@ body {
     margin-top: 20px;
     color: #8b0000;
 }
-@keyframes beat {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.2); }
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
 
-@keyframes grow {
-    0% { transform: scale(1); }
-    100% {
-        transform: scale(100);
-        transform-origin: center;
-    }
-}
+/* ================= VIDEO FINAL ================= */
 
-.growing {
-    animation: grow 2s forwards;
+.final-video {
     position: fixed;
-    z-index: 9999;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    transform-origin: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    background: black;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
+
+.final-video.show {
+    opacity: 1;
+}
+
+/* ================= TEXT ================= */
+
 h1, h2 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
 }
+
 p {
     font-size: 1.2em;
     margin-bottom: 1em;
 }
+
+#valentintext {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    z-index: 10001;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+/* ================= BUTTON ================= */
+
 button {
     background-color: #ff69b4;
     border: none;
@@ -123,9 +142,11 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 button:hover {
     background-color: #ff1493;
 }
+
 input[type="text"] {
     padding: 10px;
     font-size: 1em;
@@ -139,6 +160,8 @@ input[type="text"] {
     letter-spacing: 0.75rem;
 }
 
+/* ================= MESSAGE POPUP ================= */
+
 .message {
     position: fixed;
     bottom: 100px;
@@ -149,6 +172,8 @@ input[type="text"] {
     padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* ================= QUIZ ================= */
 
 .quiz-container {
     max-width: 600px;
@@ -199,9 +224,38 @@ input[type="text"] {
     background-color: #ff1493;
 }
 
-#valentintext {
-    position: absolute;
-    left: 50%;
+/* ================= ANIMATIONS ================= */
+
+@keyframes beat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes grow {
+    0% { transform: scale(1); }
+    100% {
+        transform: scale(100);
+        transform-origin: center;
+    }
+}
+
+.growing {
+    animation: grow 2s forwards;
+    position: fixed;
+    z-index: 9999;
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./fireworks.css">
 </head>
 <body>
+
     <div class="keys">
         <span class="key" id="key1">🔑</span>
         <span class="key" id="key2">🔑</span>
@@ -29,7 +30,7 @@
     <div id="stage2" class="hidden">
         <h2>Етап 2: Розшифруй послання</h2>
         <p id="encrypted-message"></p>
-        <input type="text" id="decrypted-input" placeholder="Введите расшифрованный текст">
+        <input type="text" id="decrypted-input" placeholder="Введи расшифрований текст">
         <button onclick="checkDecryption()">Перевірити</button>
         <p class="message hidden" id="stage2-message"></p>
     </div>
@@ -45,13 +46,26 @@
         <div class="firework"></div>
         <div class="firework"></div>
     </div>
+
     <div id="final-screen" class="hidden fullscreen">
-        <div class="final-heart-container"><div onclick="finalHeart()" id="final-heart" class="final-heart pulsating">❤️</div><div style="text-align: center;">👆<br/>Ти пройшла всі випробування, Тикай на мене</div></div>
-        <div class="heart-message"></div>
-        <p class="hiden" id="valentintext"></p>
+
+        <div class="final-heart-container">
+            <div onclick="finalHeart()" id="final-heart" class="final-heart pulsating">❤️</div>
+            <div style="text-align: center;">
+                👆<br/>А тепер... Чи будеш ти моєю валентикою? Ай в тебе вибору і так нема, так що тикай :D
+            </div>
+        </div>
+
+        <!-- ДОДАНО ВІДЕО -->
+        <video id="final-video"
+               class="final-video hidden"
+               src="./love.mp4">
+        </video>
+
+        <p class="hidden" id="valentintext"></p>
+
     </div>
 
     <script src="./script.js"></script>
 </body>
 </html>
-
